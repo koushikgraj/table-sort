@@ -1,0 +1,46 @@
+<div class="container">
+    <table class="table">
+    <thead>
+      <tr>
+      <td>
+        <a href="javascript:void(0);" ng-click="sortType = 'userId'; sortReverse = !sortReverse">
+        User ID
+        <span ng-show="sortType == 'userId' && !sortReverse" class="fa fa-caret-down">&#9650;</span>
+        <span ng-show="sortType == 'userId' && sortReverse" class="fa fa-caret-up">&#9660;</span>
+        </a>
+      </td>
+      <td>
+        <a href="javascript:void(0);" ng-click="sortType = 'id'; sortReverse = !sortReverse">
+        ID
+        <span ng-show="sortType == 'id' && !sortReverse" class="fa fa-caret-down">&#9650;</span>
+        <span ng-show="sortType == 'id' && sortReverse" class="fa fa-caret-up">&#9660;</span>
+        </a>
+      </td>
+      <td>
+        <a href="javascript:void(0);" ng-click="sortType = 'title'; sortReverse = !sortReverse">
+        Title
+        <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down">&#9650;</span>
+        <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up">&#9660;</span>
+        </a>
+      </td>
+      <td>
+        <a href="javascript:void(0);" ng-click="sortType = 'body'; sortReverse = !sortReverse">
+        Body
+        <span ng-show="sortType == 'body' && !sortReverse" class="fa fa-caret-down">&#9650;</span>
+        <span ng-show="sortType == 'body' && sortReverse" class="fa fa-caret-up">&#9660;</span>
+        </a>
+      </td>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr ng-repeat="user in userData | orderBy:sortType:sortReverse | filter:searchText">
+      <td>{{ user.userId }}</td>
+      <td>{{ user.id }}</td>
+      <td>{{ user.title }}</td>
+      <td>{{ user.body }}</td>
+      </tr>
+    </tbody>
+    
+    </table>  
+  </div>
