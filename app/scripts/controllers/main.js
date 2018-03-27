@@ -13,12 +13,4 @@ angular.module('rackspaceApp')
 	$http.get("http://jsonplaceholder.typicode.com/posts").then(function(response) {
          $scope.userData = response.data;
     });
-
-    $scope.sortOrder = function (type) {
-    	if (type === 'ASC') {
-
-    	} else {
-    		//DESC
-    	}
-    };
   });
